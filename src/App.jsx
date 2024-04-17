@@ -3,13 +3,17 @@
 // import viteLogo from '/vite.svg'
 // import './App.css'
 
+import Navbars from "./components/Navbars";
+import ProductsPage from "./components/ProductPage";
+import ShopingCart from "./components/ShopingCart";
+import ProductDetails from "./components/ProductDetails";
+import ProductCard from "./components/ProductCard";
+import Checkout from "./components/Checkout";
+
 function App() {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <h1 className="text-3xl font-bold underline">
-        Eshop web app | Vishal Khandal
-      </h1>
+      <ProductDetails />
     </div>
   );
 }
