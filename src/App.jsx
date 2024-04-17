@@ -4,11 +4,14 @@
 // import './App.css'
 
 function App() {
-
   return (
-
-    <h1>Eshop web app | Vishal Khandal</h1>
-  )
+    <div>
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <h1 className="text-3xl font-bold underline">
+        Eshop web app | Vishal Khandal
+      </h1>
+    </div>
+  );
 }
 
-export default App
+export default App;
