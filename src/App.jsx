@@ -13,6 +13,7 @@ import Checkout from "./components/Checkout";
 function App() {
   return (
     <div>
+      <Navbars />
       <ProductDetails />
     </div>
   );
