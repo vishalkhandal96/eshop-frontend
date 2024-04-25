@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("Dashboard");
+  const [activeLink, setActiveLink] = useState("Home");
   const menuRef = useRef(null);
 
   const toggleMenu = () => {
@@ -92,7 +92,7 @@ function Navbar() {
               <div className="flex flex-shrink-0 items-center">
                 <img
                   className="h-8 w-auto hidden sm:block"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                  src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg"
                   alt="Your Company"
                 />
               </div>
@@ -104,47 +104,47 @@ function Navbar() {
                   <a
                     href="#"
                     className={`rounded-md px-3 py-2 text-sm font-medium ${
-                      activeLink === "Dashboard"
+                      activeLink === "Home"
                         ? "bg-gray-900 text-white"
                         : "text-gray-300 hover:bg-gray-700 hover:text-white"
                     }`}
                     aria-current="page"
-                    onClick={() => handleLinkClick("Dashboard")}
+                    onClick={() => handleLinkClick("Home")}
                   >
-                    Dashboard
+                    Home
                   </a>
                   <a
                     href="#"
                     className={`rounded-md px-3 py-2 text-sm font-medium ${
-                      activeLink === "Team"
+                      activeLink === "Shop"
                         ? "bg-gray-900 text-white"
                         : "text-gray-300 hover:bg-gray-700 hover:text-white"
                     }`}
-                    onClick={() => handleLinkClick("Team")}
+                    onClick={() => handleLinkClick("Shop")}
                   >
-                    Team
+                    Shop
                   </a>
                   <a
                     href="#"
                     className={`rounded-md px-3 py-2 text-sm font-medium ${
-                      activeLink === "Projects"
+                      activeLink === "Category"
                         ? "bg-gray-900 text-white"
                         : "text-gray-300 hover:bg-gray-700 hover:text-white"
                     }`}
-                    onClick={() => handleLinkClick("Projects")}
+                    onClick={() => handleLinkClick("Category")}
                   >
-                    Projects
+                    Category
                   </a>
                   <a
                     href="#"
                     className={`rounded-md px-3 py-2 text-sm font-medium ${
-                      activeLink === "Calendar"
+                      activeLink === "About us"
                         ? "bg-gray-900 text-white"
                         : "text-gray-300 hover:bg-gray-700 hover:text-white"
                     }`}
-                    onClick={() => handleLinkClick("Calendar")}
+                    onClick={() => handleLinkClick("About us")}
                   >
-                    Calendar
+                    About us
                   </a>
                 </div>
               </div>
@@ -347,47 +347,47 @@ function Navbar() {
             <a
               href="#"
               className={`block rounded-md px-3 py-2 text-base font-medium ${
-                activeLink === "Dashboard"
+                activeLink === "Home"
                   ? "bg-gray-900 text-white"
                   : "text-gray-300 hover:bg-gray-700 hover:text-white"
               }`}
               aria-current="page"
-              onClick={() => handleLinkClick("Dashboard")}
+              onClick={() => handleLinkClick("Home")}
             >
-              Dashboard
+              Home
             </a>
             <a
               href="#"
               className={`block rounded-md px-3 py-2 text-base font-medium ${
-                activeLink === "Team"
+                activeLink === "Shop"
                   ? "bg-gray-900 text-white"
                   : "text-gray-300 hover:bg-gray-700 hover:text-white"
               }`}
-              onClick={() => handleLinkClick("Team")}
+              onClick={() => handleLinkClick("Shop")}
             >
-              Team
+              Shop
             </a>
             <a
               href="#"
               className={`block rounded-md px-3 py-2 text-base font-medium ${
-                activeLink === "Projects"
+                activeLink === "Category"
                   ? "bg-gray-900 text-white"
                   : "text-gray-300 hover:bg-gray-700 hover:text-white"
               }`}
-              onClick={() => handleLinkClick("Projects")}
+              onClick={() => handleLinkClick("Category")}
             >
-              Projects
+              Category
             </a>
             <a
               href="#"
               className={`block rounded-md px-3 py-2 text-base font-medium ${
-                activeLink === "Calendar"
+                activeLink === "About us"
                   ? "bg-gray-900 text-white"
                   : "text-gray-300 hover:bg-gray-700 hover:text-white"
               }`}
-              onClick={() => handleLinkClick("Calendar")}
+              onClick={() => handleLinkClick("About us")}
             >
-              Calendar
+              About us
             </a>
           </div>
         </div>
