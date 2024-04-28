@@ -142,11 +142,11 @@ function Navbar() {
                   <a
                     href="#"
                     className={`flex items-center rounded-md px-3 py-2 text-sm font-medium ${
-                      activeLink === "Category"
+                      activeLink === "Men"
                         ? "bg-gray-900 text-white"
                         : "text-gray-300 hover:bg-gray-700 hover:text-white"
                     }`}
-                    onClick={() => handleLinkClick("Category")}
+                    onClick={() => handleLinkClick("Women")}
                   >
                     Men
                     <svg
@@ -168,11 +168,11 @@ function Navbar() {
                   <a
                     href="#"
                     className={`flex items-center rounded-md px-3 py-2 text-sm font-medium ${
-                      activeLink === "Category"
+                      activeLink === "Women"
                         ? "bg-gray-900 text-white"
                         : "text-gray-300 hover:bg-gray-700 hover:text-white"
                     }`}
-                    onClick={() => handleLinkClick("Category")}
+                    onClick={() => handleLinkClick("Women")}
                   >
                     Women
                     <svg
@@ -441,11 +441,11 @@ function Navbar() {
             <a
               href="#"
               className={`flex items-center rounded-md px-3 py-2 text-base font-medium ${
-                activeLink === "Category"
+                activeLink === "Men"
                   ? "bg-gray-900 text-white"
                   : "text-gray-300 hover:bg-gray-700 hover:text-white"
               }`}
-              onClick={() => handleLinkClick("Category")}
+              onClick={() => handleLinkClick("Men")}
             >
               Men
               <svg
@@ -467,11 +467,11 @@ function Navbar() {
             <a
               href="#"
               className={`flex items-center rounded-md px-3 py-2 text-base font-medium ${
-                activeLink === "Category"
+                activeLink === "Women"
                   ? "bg-gray-900 text-white"
                   : "text-gray-300 hover:bg-gray-700 hover:text-white"
               }`}
-              onClick={() => handleLinkClick("Category")}
+              onClick={() => handleLinkClick("Women")}
             >
               Women
               <svg
