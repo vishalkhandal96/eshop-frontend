@@ -115,7 +115,7 @@ function Navbar() {
                   </a>
                   <a
                     href="#"
-                    className={`rounded-md px-3 py-2 text-sm font-medium ${
+                    className={`flex items-center rounded-md px-3 py-2 text-sm font-medium ${
                       activeLink === "Shop"
                         ? "bg-gray-900 text-white"
                         : "text-gray-300 hover:bg-gray-700 hover:text-white"
@@ -123,17 +123,73 @@ function Navbar() {
                     onClick={() => handleLinkClick("Shop")}
                   >
                     Shop
+                    <svg
+                      className="ms-3 h-2.5 w-2.5"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 10 6"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m1 1 4 4 4-4"
+                      />
+                    </svg>
                   </a>
                   <a
                     href="#"
-                    className={`rounded-md px-3 py-2 text-sm font-medium ${
+                    className={`flex items-center rounded-md px-3 py-2 text-sm font-medium ${
                       activeLink === "Category"
                         ? "bg-gray-900 text-white"
                         : "text-gray-300 hover:bg-gray-700 hover:text-white"
                     }`}
                     onClick={() => handleLinkClick("Category")}
                   >
-                    Category
+                    Men
+                    <svg
+                      className="ms-3 h-2.5 w-2.5"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 10 6"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m1 1 4 4 4-4"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    className={`flex items-center rounded-md px-3 py-2 text-sm font-medium ${
+                      activeLink === "Category"
+                        ? "bg-gray-900 text-white"
+                        : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                    }`}
+                    onClick={() => handleLinkClick("Category")}
+                  >
+                    Women
+                    <svg
+                      className="ms-3 h-2.5 w-2.5"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 10 6"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m1 1 4 4 4-4"
+                      />
+                    </svg>
                   </a>
                   <a
                     href="#"
@@ -358,7 +414,7 @@ function Navbar() {
             </a>
             <a
               href="#"
-              className={`block rounded-md px-3 py-2 text-base font-medium ${
+              className={`flex items-center rounded-md px-3 py-2 text-base font-medium ${
                 activeLink === "Shop"
                   ? "bg-gray-900 text-white"
                   : "text-gray-300 hover:bg-gray-700 hover:text-white"
@@ -366,17 +422,73 @@ function Navbar() {
               onClick={() => handleLinkClick("Shop")}
             >
               Shop
+              <svg
+                className="ms-3 h-2.5 w-2.5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
             </a>
             <a
               href="#"
-              className={`block rounded-md px-3 py-2 text-base font-medium ${
+              className={`flex items-center rounded-md px-3 py-2 text-base font-medium ${
                 activeLink === "Category"
                   ? "bg-gray-900 text-white"
                   : "text-gray-300 hover:bg-gray-700 hover:text-white"
               }`}
               onClick={() => handleLinkClick("Category")}
             >
-              Category
+              Men
+              <svg
+                className="ms-3 h-2.5 w-2.5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              className={`flex items-center rounded-md px-3 py-2 text-base font-medium ${
+                activeLink === "Category"
+                  ? "bg-gray-900 text-white"
+                  : "text-gray-300 hover:bg-gray-700 hover:text-white"
+              }`}
+              onClick={() => handleLinkClick("Category")}
+            >
+              Women
+              <svg
+                className="ms-3 h-2.5 w-2.5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
             </a>
             <a
               href="#"
