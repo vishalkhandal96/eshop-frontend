@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-function Navbar() {
+function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("Home");
@@ -9,7 +9,6 @@ function Navbar() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
   const toggleProfile = () => {
     setProfileMenuOpen(!profileMenuOpen);
   };
@@ -508,4 +507,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Header;
