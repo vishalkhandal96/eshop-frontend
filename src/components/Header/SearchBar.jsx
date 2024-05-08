@@ -3,7 +3,7 @@ import React from "react";
 function SearchBar() {
   return (
     <>
-      <form className="flex flex-1 px-6 sm:mx-16 items-center justify-center">
+      <form className="flex flex-1 px-6 items-center justify-center">
         <label htmlFor="voice-search" className="sr-only">
           Search
         </label>

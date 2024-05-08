@@ -5,7 +5,7 @@ function Wishlist() {
     <>
       <button
         type="button"
-        className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none"
+        className="hidden sm:block relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

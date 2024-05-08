@@ -42,7 +42,7 @@ function Header() {
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
             {/* Hamburger Menu */}
-            <div className="relative inset-y-0 left-0 flex items-center sm:hidden">
+            <div className="relative inset-y-0 left-0 flex items-center lg:hidden">
               {/* Mobile menu button */}
               <button
                 type="button"

@@ -5,7 +5,7 @@ function ShoppingCart() {
     <>
       <button
         type="button"
-        className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none"
+        className="hidden sm:block relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none"
       >
         <span className="absolute -inset-1.5"></span>
         <span className="sr-only">Shopping cart</span>
