@@ -1,9 +1,10 @@
 import React from "react";
+import Carousel from "../components/Hero/Carousel";
 
 function Home() {
   return (
     <div>
-      <h1>This is Home page</h1>
+      <Carousel />
     </div>
   );
 }
