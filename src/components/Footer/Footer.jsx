@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="grid grid-cols-1 gap-8 sm:gap-6 sm:grid-cols-7">
-            <div className="col-span-2">
+            <div className="col-span-1 sm:col-span-2">
               <Link to="/">
                 <img
                   src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg"
@@ -113,7 +113,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="col-span-2">
+            <div className="col-span-1 sm:col-span-2">
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
                 Newsletter
               </h2>
@@ -123,7 +123,7 @@ export default function Footer() {
               </p>
               <form
                 action=""
-                className="mt-2 flex flex-col xl:flex-row items-start justify-between gap-2"
+                className="mt-2 flex flex-col xl:flex-row items-start justify-between gap-2 overflow-hidden"
               >
                 <input
                   type="text"
@@ -144,8 +144,11 @@ export default function Footer() {
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center">
             © 2023
-            <a href="https://hiteshchoudhary.com/" className="hover:underline">
-              hiteshchoudhary
+            <a
+              href="https://github.com/vishalkhandal96"
+              className="hover:underline"
+            >
+              vishalkumarkhandal
             </a>
             . All Rights Reserved.
           </span>
