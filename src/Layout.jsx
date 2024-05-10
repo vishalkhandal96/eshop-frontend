@@ -8,9 +8,9 @@ function Layout() {
   return (
     <div>
       <Header />
-      <Home />
       <main>
         <Outlet />
+        <Home />
       </main>
       <Footer />
     </div>
