@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 
 function ProductCarousel() {
   const containerRef = useRef(null);
@@ -31,6 +31,17 @@ function ProductCarousel() {
         </div>
         <div className="relative">
           <div className="flex gap-1">
+            <div className="product-card bg-white shadow-lg rounded-sm transition-all duration-300">
+              <img
+                className="object-center w-full p-2"
+                src="https://via.placeholder.com/200"
+                alt="Product Image"
+              />
+              <div className="p-2">
+                <h2 className="text-lg font-bold mb-2">Product 1</h2>
+                <p>Description of Product 1</p>
+              </div>
+            </div>
             <div className="product-card bg-white shadow-lg rounded-sm transition-all duration-300">
               <img
                 className="object-center w-full p-2"
@@ -130,7 +141,6 @@ function ProductCarousel() {
         </div>
       </div>
     </div>
-    // </div>
   );
 }
 
