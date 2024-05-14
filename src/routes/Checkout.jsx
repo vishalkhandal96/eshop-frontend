@@ -1,6 +1,6 @@
 import React from "react";
 
-function Women() {
+function Checkout() {
   return (
     <div>
       <h1>This is women product page</h1>
@@ -8,4 +8,4 @@ function Women() {
   );
 }
 
-export default Women;
+export default Checkout;

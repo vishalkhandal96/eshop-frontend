@@ -1,4 +1,5 @@
 import Pagination from "./Pagination";
+import ProductCard from "./ProductCard";
 
 function ProductsPage() {
   // Dummy product data (replace with actual data)
@@ -44,7 +45,7 @@ function ProductsPage() {
         <h2 className="text-lg font-semibold mb-4">Products</h2>
         <div className="grid grid-cols-3 gap-4">
           {/* Map through products and display them as cards */}
-          {products.map((product) => (
+          {/* {products.map((product) => (
             <div key={product.id} className="bg-white rounded-lg shadow p-4">
               <img
                 src={product.image}
@@ -53,9 +54,14 @@ function ProductsPage() {
               />
               <h3 className="text-lg font-semibold">{product.name}</h3>
               <p className="text-gray-600">${product.price}</p>
-              {/* Add more product details as needed */}
+              // Add more product details as needed 
             </div>
-          ))}
+          ))} */}
+          <ProductCard />
+          <ProductCard />
+
+          <ProductCard />
+          <ProductCard />
         </div>
         <div className="flex justify-center items-center mt-2">
           <Pagination />

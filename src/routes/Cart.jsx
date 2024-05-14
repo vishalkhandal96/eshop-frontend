@@ -1,6 +1,6 @@
 import React from "react";
 
-function Men() {
+function Cart() {
   return (
     <div>
       <h1>This is Men product page</h1>
@@ -8,4 +8,4 @@ function Men() {
   );
 }
 
-export default Men;
+export default Cart;

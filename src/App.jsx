@@ -8,18 +8,18 @@ import "./App.css";
 import Layout from "./Layout";
 import NotMatch from "./routes/NotMatch";
 import Home from "./routes/Home";
-import Shop from "./routes/Shop";
-import Men from "./routes/Men";
-import Women from "./routes/Women";
 import About from "./routes/About";
+import Products from "./routes/Products";
+import Payment from "./routes/Payment";
+import Categories from "./routes/Categories";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />} errorElement={<NotMatch.jsx />}>
       <Route path="/home" element={<Home />} />
-      <Route path="/shop" element={<Shop />} />
-      <Route path="/men" element={<Men />} />
-      <Route path="/women" element={<Women />} />
+      <Route path="/products" element={<Products />} />
+      <Route path="/payment" element={<Payment />} />
+      <Route path="/categories" element={<Categories />} />
       <Route path="/about" element={<About />} />
     </Route>
   )
@@ -27,9 +27,9 @@ const router = createBrowserRouter(
 
 function App() {
   return (
-    <>
+    <div className="bg-gray-200">
       <RouterProvider router={router} />
-    </>
+    </div>
   );
 }
 

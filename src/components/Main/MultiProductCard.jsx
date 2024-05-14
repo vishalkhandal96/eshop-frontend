@@ -1,4 +1,8 @@
-import { PromotionCard, SecondPromotionCard } from "./PromotionCard";
+import {
+  PromotionCard,
+  SecondPromotionCard,
+  ThirdPromotionCard,
+} from "./PromotionCard";
 
 function MultiProductCard() {
   return (
@@ -8,7 +12,7 @@ function MultiProductCard() {
           {/* First Card */}
           <PromotionCard />
           <SecondPromotionCard />
-          <SecondPromotionCard />
+          <ThirdPromotionCard />
 
           {/* Forth Card */}
           <div className="flex flex-col min-w-[300px] min-h-[300px] gap-4 px-6 py-4 bg-white">
