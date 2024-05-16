@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div
-      className="p-4 hover:shadow-xl relative"
+      className="hover:shadow-xl relative"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -28,7 +28,7 @@ const ProductCard = ({ product }) => {
         <img
           src={product.images[imageIndex]}
           alt={product.title}
-          className="w-full h-48 object-cover mb-4"
+          className="w-full h-44 object-cover mb-2"
         />
 
         {/* <div className="absolute top-2 left-2 flex space-x-1">
@@ -58,68 +58,70 @@ const ProductCard = ({ product }) => {
 
         {/* <HeartIcon className="w-6 h-6 text-gray-400 absolute top-2 right-2 cursor-pointer" /> */}
       </div>
-      <h2 className="text-md font-bold mb-2">{product.brand}</h2>
-      <h3 className="text-md font-semibold mb-2 line-clamp-2">
-        {product.title}
-      </h3>
-      <p className="text-sm text-gray-700 mb-2">{product.description}</p>
-      <div className="flex items-center gap-3 mt-2">
-        <span className="font-bold">₹{product.price}</span>
-        <span className="text text-gray-500 font-bold line-through ml-2">
-          ₹
-          {typeof product.price === "number"
-            ? product.price.toFixed(2)
-            : product.price}
-        </span>
-        <span className="font-bold text-green-600">
-          {typeof product.discount === "number"
-            ? product.discount.toFixed(2)
-            : product.discount}
-          % off
-        </span>
-      </div>
-      <div className="flex justify-between items-center mt-2">
-        <div className="flex items-center gap-3">
-          <span className="flex items-center px-1 rounded-sm bg-green-700 text-white font-bold text-md gap-1">
-            {product.rating}
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"
-                />
-              </svg>
-            </span>
+      <div className="px-4 mb-4">
+        <h2 className="text-md font-bold mb-2">{product.brand}</h2>
+        <h3 className="text-md font-semibold mb-2 line-clamp-2">
+          {product.title}
+        </h3>
+        <p className="text-sm text-gray-700 mb-2">{product.description}</p>
+        <div className="flex items-center gap-3 mt-2">
+          <span className="font-bold">₹{product.price}</span>
+          <span className="text text-gray-500 font-bold line-through ml-2">
+            ₹
+            {typeof product.price === "number"
+              ? product.price.toFixed(2)
+              : product.price}
           </span>
-          <span className="text-gray-600">({product.reviews})</span>
+          <span className="font-bold text-green-600">
+            {typeof product.discount === "number"
+              ? product.discount.toFixed(2)
+              : product.discount}
+            % off
+          </span>
         </div>
+        <div className="flex justify-between items-center mt-2">
+          <div className="flex items-center gap-3">
+            <span className="flex items-center px-1 rounded-sm bg-green-700 text-white font-bold text-md gap-1">
+              {product.rating}
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-4 h-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            <span className="text-gray-600">({product.reviews})</span>
+          </div>
+        </div>
+        <p className="text-xs text-red-600 mt-2 mb-2">{product.description}</p>
+        <div className="flex mt-2 space-x-2">
+          {product.images.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={product.title}
+              className="w-10 h-10 object-cover cursor-pointer"
+              onMouseOver={() => handleMouseOver(index)}
+            />
+          ))}
+        </div>
+        <button
+          type="button"
+          className="mt-3 w-full rounded-sm bg-black px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+        >
+          Add to Cart
+        </button>
       </div>
-      <p className="text-xs text-red-600 mt-2 mb-2">{product.description}</p>
-      <div className="flex mt-2 space-x-2">
-        {product.images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={product.title}
-            className="w-10 h-10 object-cover cursor-pointer"
-            onMouseOver={() => handleMouseOver(index)}
-          />
-        ))}
-      </div>
-      <button
-        type="button"
-        className="mt-3 w-full rounded-sm bg-black px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-      >
-        Add to Cart
-      </button>
     </div>
   );
 };

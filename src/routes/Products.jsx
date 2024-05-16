@@ -4,6 +4,8 @@ import Category from "../components/Filters/Category";
 import PriceRange from "../components/Filters/PriceRange";
 import { ProductCard } from "../components/Products/ProductCard";
 import Pagination from "../components/Pagination";
+import Breadcrumb from "../components/Breadcrumb";
+import ProductNav from "../components/ProductNav";
 
 function Products() {
   const sampleProduct = {
@@ -40,7 +42,10 @@ function Products() {
             {/* Add more filter options as needed */}
           </div>
           <div className="w-4/5 p-4 bg-white">
+            <Breadcrumb />
             <h2 className="text-lg font-semibold mb-4">Products</h2>
+
+            <ProductNav />
             <div className="flex flex-col sm:grid sm:grid-cols-4 gap-2">
               <ProductCard product={sampleProduct} />
               <ProductCard product={sampleProduct} />
