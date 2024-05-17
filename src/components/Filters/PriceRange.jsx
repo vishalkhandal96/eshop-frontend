@@ -3,10 +3,10 @@ import React from "react";
 function PriceRange() {
   return (
     <>
-      <div className="mb-6">
+      <div className="mb-3 mt-3">
         <div className="flex items-center justify-between mb-2">
           <h3 className="text-sm font-medium">Price Range</h3>
-          <button className="text-blue-500 hover:text-blue-600 uppercase text-xs">
+          <button className="text-blue-500 hover:text-blue-600 uppercase text-xs font-semibold">
             clear
           </button>
         </div>

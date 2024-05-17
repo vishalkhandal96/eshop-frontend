@@ -1,6 +1,6 @@
 function Pagination() {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center mt-4">
       <a
         href="#"
         className="mx-1 cursor-not-allowed text-sm font-semibold text-gray-900"

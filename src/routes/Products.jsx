@@ -6,6 +6,13 @@ import { ProductCard } from "../components/Products/ProductCard";
 import Pagination from "../components/Pagination";
 import Breadcrumb from "../components/Breadcrumb";
 import ProductNav from "../components/ProductNav";
+import BrandFilter from "../components/Filters/BrandFilter";
+import DiscountFilter from "../components/Filters/DiscountFilter";
+import CustomerRatingsFilter from "../components/Filters/CustomerRatingsFilter";
+import SizeFilter from "../components/Filters/SizeFilter";
+import ColorFilter from "../components/Filters/ColorFilter";
+import OffersFilter from "../components/Filters/OffersFilter";
+import AvaliabilityFilter from "../components/Filters/AvaliabilityFilter";
 
 function Products() {
   const sampleProduct = {
@@ -38,7 +45,25 @@ function Products() {
             {/* Filter options */}
 
             <Category />
+
             <PriceRange />
+
+            <hr className="border-gray-300" />
+            <BrandFilter />
+            <hr className="border-gray-300" />
+            <DiscountFilter />
+            <hr className="border-gray-300" />
+            <CustomerRatingsFilter />
+            <hr className="border-gray-300" />
+            <SizeFilter />
+            <hr className="border-gray-300" />
+            <ColorFilter />
+            <hr className="border-gray-300" />
+            <OffersFilter />
+            <hr className="border-gray-300" />
+            <AvaliabilityFilter />
+            <hr className="border-gray-300" />
+
             {/* Add more filter options as needed */}
           </div>
           <div className="w-4/5 p-4 bg-white">

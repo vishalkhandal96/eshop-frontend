@@ -37,7 +37,7 @@ function ProductNav() {
     // </nav>
     <>
       <div className="flex items-center">
-        <div className="flex flex-row font-medium space-x-4 rtl:space-x-reverse text-md">
+        <div className="mb-2 flex flex-row font-medium space-x-4 rtl:space-x-reverse text-md">
           <div>
             <h2>Sort By</h2>
           </div>
