@@ -14,7 +14,7 @@ import ColorFilter from "../components/Filters/ColorFilter";
 import OffersFilter from "../components/Filters/OffersFilter";
 import AvaliabilityFilter from "../components/Filters/AvaliabilityFilter";
 
-function Products() {
+function ProductList() {
   const sampleProduct = {
     title:
       "TRIGGR Kraken X1 with Battery Display, 40ms Latency, Qu IGGR Kraken X1 with Battery Display, 40ms La",
@@ -89,4 +89,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default ProductList;

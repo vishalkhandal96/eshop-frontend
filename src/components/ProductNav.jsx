@@ -8,33 +8,6 @@ function ProductNav() {
   };
 
   return (
-    // <nav>
-    //   <div className="flex items-center mb-3">
-    //     <ul className="flex flex-row font-medium space-x-4 rtl:space-x-reverse text-md">
-    //       <li>
-    //         <h2>Sort By</h2>
-    //       </li>
-    //       {[
-    //         "Popularity",
-    //         "Price-Low to High",
-    //         "Price-High to Low",
-    //         "Newest First",
-    //       ].map((item, index) => (
-    //         <li key={index}>
-    //           <a
-    //             href="#"
-    //             className={`text-gray-700 dark:text-white hover:text-gray-900 focus:outline-none ${
-    //               activeIndex === index ? "border-b-2 border-blue-500 pb-2" : ""
-    //             }`}
-    //             onClick={() => handleClick(index)}
-    //           >
-    //             {item}
-    //           </a>
-    //         </li>
-    //       ))}
-    //     </ul>
-    //   </div>
-    // </nav>
     <>
       <div className="flex items-center">
         <div className="mb-2 flex flex-row font-medium space-x-4 rtl:space-x-reverse text-md">

@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouteError } from "react-router-dom";
 
-function NotMatch() {
+function ErrorPage() {
   const error = useRouteError();
   return (
     <div>
@@ -14,4 +14,4 @@ function NotMatch() {
   );
 }
 
-export default NotMatch;
+export default ErrorPage;
