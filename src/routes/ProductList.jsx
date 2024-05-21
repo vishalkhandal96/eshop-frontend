@@ -71,14 +71,7 @@ function ProductList() {
             <h2 className="text-lg font-semibold mb-4">Products</h2>
 
             <ProductNav />
-            <div className="flex flex-col sm:grid sm:grid-cols-4 gap-2">
-              <ProductCard product={sampleProduct} />
-              <ProductCard product={sampleProduct} />
-
-              <ProductCard product={sampleProduct} />
-
-              <ProductCard product={sampleProduct} />
-            </div>
+            <ProductCard />
             <div className="flex justify-center items-center mt-2">
               <Pagination />
             </div>

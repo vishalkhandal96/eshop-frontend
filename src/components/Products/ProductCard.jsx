@@ -1,9 +1,21 @@
-import React, { useState } from "react";
-// import { HeartIcon } from "@heroicons/react/solid";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-const ProductCard = ({ product }) => {
+const ProductCard = () => {
+  const API_URL = "https://dummyjson.com/products";
+  const [products, setProducts] = useState([]);
   const [hover, setHover] = useState(false);
   const [imageIndex, setImageIndex] = useState(0);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const products = await fetchProducts();
+      setProducts(products);
+      console.log(products);
+    };
+
+    getProducts();
+  }, []);
 
   const handleMouseEnter = () => {
     setHover(true);
@@ -18,109 +30,119 @@ const ProductCard = ({ product }) => {
     setImageIndex(index);
   };
 
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get(API_URL);
+      return response.data.products;
+    } catch (error) {
+      console.error("Error fetching products:", error);
+      return [];
+    }
+  };
+
   return (
     <div
-      className="hover:shadow-xl relative"
+      className="hover:shadow-xl mt-2"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="relative">
-        <img
-          src={product.images[imageIndex]}
-          alt={product.title}
-          className="w-full h-44 object-cover mb-2"
-        />
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {products.map((product) => {
+          <div key={product.id} className="border p-4 rounded-lg shadow-md">
+            <div className="relative">
+              <img
+                src={product.thumbnail}
+                alt={product.title}
+                className="w-full h-44 object-cover mb-2"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6 text-gray-400 absolute top-2 right-2 cursor-pointer"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                />
+              </svg>
+            </div>
 
-        {/* <div className="absolute top-2 left-2 flex space-x-1">
-          {images.map((_, index) => (
-            <span
-              key={index}
-              className={`w-2 h-2 rounded-full ${
-                index === currentImageIndex ? "bg-gray-800" : "bg-gray-400"
-              }`}
-            ></span>
-          ))}
-        </div> */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-6 h-6 text-gray-400 absolute top-2 right-2 cursor-pointer"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
-          />
-        </svg>
+            <h2 className="text-md font-bold mb-2">{product.brand}</h2>
+            <h3 className="text-md font-semibold mb-2 line-clamp-2">
+              {product.title}
+            </h3>
+            <p className="text-sm text-gray-700 mb-2">{product.description}</p>
+            <div className="flex items-center gap-3 mt-2">
+              <span className="font-bold">₹{product.price}</span>
 
-        {/* <HeartIcon className="w-6 h-6 text-gray-400 absolute top-2 right-2 cursor-pointer" /> */}
-      </div>
-      <div className="px-4 mb-4">
-        <h2 className="text-md font-bold mb-2">{product.brand}</h2>
-        <h3 className="text-md font-semibold mb-2 line-clamp-2">
-          {product.title}
-        </h3>
-        <p className="text-sm text-gray-700 mb-2">{product.description}</p>
-        <div className="flex items-center gap-3 mt-2">
-          <span className="font-bold">₹{product.price}</span>
-          <span className="text text-gray-500 font-bold line-through ml-2">
-            ₹
-            {typeof product.price === "number"
-              ? product.price.toFixed(2)
-              : product.price}
-          </span>
-          <span className="font-bold text-green-600">
-            {typeof product.discount === "number"
-              ? product.discount.toFixed(2)
-              : product.discount}
-            % off
-          </span>
-        </div>
-        <div className="flex justify-between items-center mt-2">
-          <div className="flex items-center gap-3">
-            <span className="flex items-center px-1 rounded-sm bg-green-700 text-white font-bold text-md gap-1">
-              {product.rating}
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-4 h-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"
-                  />
-                </svg>
+              <span className="font-bold text-green-600">
+                {product.discountPercentage}% off
               </span>
-            </span>
-            <span className="text-gray-600">({product.reviews})</span>
-          </div>
-        </div>
-        <p className="text-xs text-red-600 mt-2 mb-2">{product.description}</p>
-        <div className="flex mt-2 space-x-2">
-          {product.images.map((image, index) => (
+            </div>
+            <div className="flex justify-between items-center mt-2">
+              <div className="flex items-center gap-3">
+                <span className="flex items-center px-1 rounded-sm bg-green-700 text-white font-bold text-md gap-1">
+                  {product.rating}
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-4 h-4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span className="text-gray-600">({product.reviews})</span>
+              </div>
+            </div>
+            <p className="text-xs text-red-600 mt-2 mb-2">
+              {product.description}
+            </p>
+            <div className="flex mt-2 space-x-2">
+              {product.images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={product.title}
+                  className="w-10 h-10 object-cover cursor-pointer"
+                  onMouseOver={() => handleMouseOver(index)}
+                />
+              ))}
+            </div>
+            <button
+              type="button"
+              className="mt-3 w-full rounded-sm bg-black px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+            >
+              Add to Cart
+            </button>
+          </div>;
+        })}
+      </div> */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {products.map((product) => (
+          <div key={product.id} className="border p-4 rounded-lg shadow-md">
             <img
-              key={index}
-              src={image}
+              src={product.thumbnail}
               alt={product.title}
-              className="w-10 h-10 object-cover cursor-pointer"
-              onMouseOver={() => handleMouseOver(index)}
+              className="w-full h-48 object-cover mb-4"
             />
-          ))}
-        </div>
-        <button
-          type="button"
-          className="mt-3 w-full rounded-sm bg-black px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-        >
-          Add to Cart
-        </button>
+            <h2 className="text-xl font-semibold mb-2">{product.title}</h2>
+            <p className="text-gray-700 mb-2">{product.description}</p>
+            <p className="text-green-600 font-bold">${product.price}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
