@@ -1,4 +1,12 @@
+import { Link, useParams } from "react-router-dom";
+import useFetchProducts from "../hooks/useFetchProducts";
+
 function ProductDetails() {
+  const { productId } = useParams();
+  const { products, error } = useFetchProducts(productId);
+
+  if (error) return <p>Error: {error.message}</p>;
+
   return (
     <>
       <div className="mx-auto max-w-7xl px-4 md:px-8 2xl:px-16">
@@ -19,10 +27,10 @@ function ProductDetails() {
           </div>
         </div>
       </div>
-      <div className="sp mx-auto max-w-7xl px-2 py-10 lg:px-0">
+      <div className="sp mx-auto max-w-7xl px-2 py-1 lg:px-0">
         <div className="overflow-hidden">
-          <div className="mb-9 pt-4 md:px-6 md:pt-7 lg:mb-2 lg:p-8 2xl:p-10 2xl:pt-10">
-            <div className="items-start justify-between lg:flex lg:space-x-8">
+          <div className="mb-9 pt-1 md:px-6 md:pt-7 lg:mb-2 lg:p-8 2xl:p-10 2xl:pt-10">
+            <div className="items-start lg:flex lg:space-x-8">
               <div className="mb-6 items-center justify-center overflow-hidden md:mb-8 lg:mb-0 xl:flex">
                 <div className="w-full xl:flex xl:flex-row-reverse">
                   <div className="relative mb-2.5 w-full shrink-0 overflow-hidden rounded-md border md:mb-3 xl:w-[480px] 2xl:w-[650px]">
@@ -97,7 +105,7 @@ function ProductDetails() {
                   </div>
                 </div>
               </div>
-              <div className="flex shrink-0 flex-col lg:w-[430px] xl:w-[470px] 2xl:w-[480px] mt-6 w-full lg:mt-0 lg:w-1/2 lg:pl-10">
+              <div className="flex shrink-0 flex-col xl:w-[470px] 2xl:w-[480px] mt-6 w-full lg:mt-0 lg:w-1/2 lg:pl-2">
                 <h2 className="text-sm font-semibold tracking-widest text-gray-500">
                   Nike
                 </h2>
@@ -292,7 +300,6 @@ function ProductDetails() {
                   </header>
                 </div>
               </div>
-              ;
             </div>
           </div>
         </div>

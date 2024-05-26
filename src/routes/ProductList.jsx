@@ -69,9 +69,8 @@ function ProductList() {
           <div className="w-4/5 p-4 bg-white">
             <Breadcrumb />
             <h2 className="text-lg font-semibold mb-4">Products</h2>
-
             <ProductNav />
-            <ProductCard />
+            <ProductCard category="smartphones" />
             <div className="flex justify-center items-center mt-2">
               <Pagination />
             </div>

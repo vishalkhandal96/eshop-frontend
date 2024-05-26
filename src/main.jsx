@@ -19,7 +19,7 @@ import Contact from "./routes/Contact.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "",
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
@@ -28,11 +28,11 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "category/:categoryName",
+        path: "products/category/:categoryName",
         element: <ProductList />,
       },
       {
-        path: "product/:productName",
+        path: "products/:productName",
         element: <ProductDetails />,
       },
       {

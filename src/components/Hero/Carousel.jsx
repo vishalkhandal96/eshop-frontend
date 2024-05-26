@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import carousel_1 from "../../assets/images/carousel/carousel-1.jpg";
 import carousel_2 from "../../assets/images/carousel/carousel-2.jpg";
 import carousel_3 from "../../assets/images/carousel/carousel-3.jpg";
@@ -15,16 +15,24 @@ function Carousel() {
   );
 
   const handlePrevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === 0 ? 4 : prevSlide - 1));
+    setCurrentSlide((prevSlide) => (prevSlide === 0 ? 7 : prevSlide - 1));
   };
 
   const handleNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === 4 ? 0 : prevSlide + 1));
+    setCurrentSlide((prevSlide) => (prevSlide === 7 ? 0 : prevSlide + 1));
   };
 
   const handleIndicatorClick = (index) => {
     setCurrentSlide(index);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide === 7 ? 0 : prevSlide + 1));
+    }, 3000); // Change the interval duration as needed (in milliseconds)
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const carouselItems = document.querySelectorAll("[data-carousel-item]");
@@ -52,67 +60,32 @@ function Carousel() {
       >
         {/* <!-- Carousel wrapper --> */}
         <div className="relative h-56 overflow-hidden sm:h-72">
-          <div className="duration-700 ease-in-out" data-carousel-item>
-            <img
-              src={carousel_1}
-              className="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
-          </div>
-
-          <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-              src={carousel_2}
-              className="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
-          </div>
-
-          <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-              src={carousel_3}
-              className="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
-          </div>
-
-          <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-              src={carousel_4}
-              className="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
-          </div>
-
-          <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-              src={carousel_5}
-              className="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
-          </div>
-          <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-              src={carousel_6}
-              className="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
-          </div>
-          <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-              src={carousel_7}
-              className="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
-          </div>
-          <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-              src={carousel_8}
-              className="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
-          </div>
+          {[
+            carousel_1,
+            carousel_2,
+            carousel_3,
+            carousel_4,
+            carousel_5,
+            carousel_6,
+            carousel_7,
+            carousel_8,
+          ].map((image, index) => (
+            <div
+              key={index}
+              className={`duration-700 ease-in-out ${
+                index === currentSlide ? "" : "hidden"
+              }`}
+              data-carousel-item
+            >
+              <img
+                src={image}
+                className="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt={`carousel-${index + 1}`}
+              />
+            </div>
+          ))}
         </div>
+
         {/* <!-- Slider indicators --> */}
 
         <div className="absolute z-10 flex items-center px-3 py-1 group rounded-lg bg-gray-300/80 -translate-x-1/2 bottom-5 left-1/2 space-x-1 rtl:space-x-reverse">

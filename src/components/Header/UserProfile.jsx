@@ -80,7 +80,7 @@ function UserProfile({
                 </svg>
               </span>
               <Link
-                to="#"
+                to="account/profile"
                 className="block px-4 py-2 text-sm text-gray-700"
                 role="menuitem"
                 tabIndex="-1"
@@ -108,7 +108,7 @@ function UserProfile({
                 </svg>
               </span>
               <Link
-                to="#"
+                to="account/orders"
                 className="block px-4 py-2 text-sm text-gray-700"
                 role="menuitem"
                 tabIndex="-1"
